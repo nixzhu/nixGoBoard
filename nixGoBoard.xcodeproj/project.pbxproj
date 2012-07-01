@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		506301C815A0219600515303 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506301C715A0219600515303 /* UIKit.framework */; };
+		506301CA15A0219600515303 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506301C915A0219600515303 /* Foundation.framework */; };
+		506301CC15A0219600515303 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506301CB15A0219600515303 /* CoreGraphics.framework */; };
+		506301D215A0219600515303 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 506301D015A0219600515303 /* InfoPlist.strings */; };
+		506301D415A0219600515303 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 506301D315A0219600515303 /* main.m */; };
+		506301D815A0219600515303 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 506301D715A0219600515303 /* AppDelegate.m */; };
+		506301DB15A0219600515303 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506301DA15A0219600515303 /* ViewController.m */; };
+		506301DE15A0219600515303 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 506301DC15A0219600515303 /* ViewController.xib */; };
+		506301E615A0219600515303 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506301E515A0219600515303 /* SenTestingKit.framework */; };
+		506301E715A0219600515303 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506301C715A0219600515303 /* UIKit.framework */; };
+		506301E815A0219600515303 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506301C915A0219600515303 /* Foundation.framework */; };
+		506301F015A0219600515303 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 506301EE15A0219600515303 /* InfoPlist.strings */; };
+		506301F315A0219600515303 /* nixGoBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 506301F215A0219600515303 /* nixGoBoardTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		506301E915A0219600515303 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 506301BA15A0219600515303 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 506301C215A0219600515303;
+			remoteInfo = nixGoBoard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		506301C315A0219600515303 /* nixGoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nixGoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		506301C715A0219600515303 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		506301C915A0219600515303 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		506301CB15A0219600515303 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		506301CF15A0219600515303 /* nixGoBoard-Info.plist */ = {isa = PBXFileReference; path = "nixGoBoard-Info.plist"; sourceTree = "<group>"; };
+		506301D115A0219600515303 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		506301D315A0219600515303 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		506301D515A0219600515303 /* nixGoBoard-Prefix.pch */ = {isa = PBXFileReference; path = "nixGoBoard-Prefix.pch"; sourceTree = "<group>"; };
+		506301D615A0219600515303 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		506301D715A0219600515303 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		506301D915A0219600515303 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		506301DA15A0219600515303 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		506301DD15A0219600515303 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		506301E415A0219600515303 /* nixGoBoardTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nixGoBoardTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		506301E515A0219600515303 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		506301ED15A0219600515303 /* nixGoBoardTests-Info.plist */ = {isa = PBXFileReference; path = "nixGoBoardTests-Info.plist"; sourceTree = "<group>"; };
+		506301EF15A0219600515303 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		506301F115A0219600515303 /* nixGoBoardTests.h */ = {isa = PBXFileReference; path = nixGoBoardTests.h; sourceTree = "<group>"; };
+		506301F215A0219600515303 /* nixGoBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nixGoBoardTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		506301C015A0219600515303 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506301C815A0219600515303 /* UIKit.framework in Frameworks */,
+				506301CA15A0219600515303 /* Foundation.framework in Frameworks */,
+				506301CC15A0219600515303 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506301E015A0219600515303 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506301E615A0219600515303 /* SenTestingKit.framework in Frameworks */,
+				506301E715A0219600515303 /* UIKit.framework in Frameworks */,
+				506301E815A0219600515303 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		506301B815A0219600515303 = {
+			isa = PBXGroup;
+			children = (
+				506301CD15A0219600515303 /* nixGoBoard */,
+				506301EB15A0219600515303 /* nixGoBoardTests */,
+				506301C615A0219600515303 /* Frameworks */,
+				506301C415A0219600515303 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		506301C415A0219600515303 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				506301C315A0219600515303 /* nixGoBoard.app */,
+				506301E415A0219600515303 /* nixGoBoardTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		506301C615A0219600515303 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				506301C715A0219600515303 /* UIKit.framework */,
+				506301C915A0219600515303 /* Foundation.framework */,
+				506301CB15A0219600515303 /* CoreGraphics.framework */,
+				506301E515A0219600515303 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		506301CD15A0219600515303 /* nixGoBoard */ = {
+			isa = PBXGroup;
+			children = (
+				506301D615A0219600515303 /* AppDelegate.h */,
+				506301D715A0219600515303 /* AppDelegate.m */,
+				506301D915A0219600515303 /* ViewController.h */,
+				506301DA15A0219600515303 /* ViewController.m */,
+				506301DC15A0219600515303 /* ViewController.xib */,
+				506301CE15A0219600515303 /* Supporting Files */,
+			);
+			path = nixGoBoard;
+			sourceTree = "<group>";
+		};
+		506301CE15A0219600515303 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				506301CF15A0219600515303 /* nixGoBoard-Info.plist */,
+				506301D015A0219600515303 /* InfoPlist.strings */,
+				506301D315A0219600515303 /* main.m */,
+				506301D515A0219600515303 /* nixGoBoard-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		506301EB15A0219600515303 /* nixGoBoardTests */ = {
+			isa = PBXGroup;
+			children = (
+				506301F115A0219600515303 /* nixGoBoardTests.h */,
+				506301F215A0219600515303 /* nixGoBoardTests.m */,
+				506301EC15A0219600515303 /* Supporting Files */,
+			);
+			path = nixGoBoardTests;
+			sourceTree = "<group>";
+		};
+		506301EC15A0219600515303 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				506301ED15A0219600515303 /* nixGoBoardTests-Info.plist */,
+				506301EE15A0219600515303 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		506301C215A0219600515303 /* nixGoBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506301F615A0219600515303 /* Build configuration list for PBXNativeTarget "nixGoBoard" */;
+			buildPhases = (
+				506301BF15A0219600515303 /* Sources */,
+				506301C015A0219600515303 /* Frameworks */,
+				506301C115A0219600515303 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nixGoBoard;
+			productName = nixGoBoard;
+			productReference = 506301C315A0219600515303 /* nixGoBoard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		506301E315A0219600515303 /* nixGoBoardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506301F915A0219600515303 /* Build configuration list for PBXNativeTarget "nixGoBoardTests" */;
+			buildPhases = (
+				506301DF15A0219600515303 /* Sources */,
+				506301E015A0219600515303 /* Frameworks */,
+				506301E115A0219600515303 /* Resources */,
+				506301E215A0219600515303 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				506301EA15A0219600515303 /* PBXTargetDependency */,
+			);
+			name = nixGoBoardTests;
+			productName = nixGoBoardTests;
+			productReference = 506301E415A0219600515303 /* nixGoBoardTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		506301BA15A0219600515303 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 506301BD15A0219600515303 /* Build configuration list for PBXProject "nixGoBoard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 506301B815A0219600515303;
+			productRefGroup = 506301C415A0219600515303 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				506301C215A0219600515303 /* nixGoBoard */,
+				506301E315A0219600515303 /* nixGoBoardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		506301C115A0219600515303 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506301D215A0219600515303 /* InfoPlist.strings in Resources */,
+				506301DE15A0219600515303 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506301E115A0219600515303 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506301F015A0219600515303 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		506301E215A0219600515303 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		506301BF15A0219600515303 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506301D415A0219600515303 /* main.m in Sources */,
+				506301D815A0219600515303 /* AppDelegate.m in Sources */,
+				506301DB15A0219600515303 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		506301DF15A0219600515303 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506301F315A0219600515303 /* nixGoBoardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		506301EA15A0219600515303 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 506301C215A0219600515303 /* nixGoBoard */;
+			targetProxy = 506301E915A0219600515303 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		506301D015A0219600515303 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				506301D115A0219600515303 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		506301DC15A0219600515303 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				506301DD15A0219600515303 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		506301EE15A0219600515303 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				506301EF15A0219600515303 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		506301F415A0219600515303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		506301F515A0219600515303 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		506301F715A0219600515303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nixGoBoard/nixGoBoard-Prefix.pch";
+				INFOPLIST_FILE = "nixGoBoard/nixGoBoard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		506301F815A0219600515303 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nixGoBoard/nixGoBoard-Prefix.pch";
+				INFOPLIST_FILE = "nixGoBoard/nixGoBoard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		506301FA15A0219600515303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/nixGoBoard.app/nixGoBoard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nixGoBoard/nixGoBoard-Prefix.pch";
+				INFOPLIST_FILE = "nixGoBoardTests/nixGoBoardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		506301FB15A0219600515303 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/nixGoBoard.app/nixGoBoard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nixGoBoard/nixGoBoard-Prefix.pch";
+				INFOPLIST_FILE = "nixGoBoardTests/nixGoBoardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		506301BD15A0219600515303 /* Build configuration list for PBXProject "nixGoBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506301F415A0219600515303 /* Debug */,
+				506301F515A0219600515303 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		506301F615A0219600515303 /* Build configuration list for PBXNativeTarget "nixGoBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506301F715A0219600515303 /* Debug */,
+				506301F815A0219600515303 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		506301F915A0219600515303 /* Build configuration list for PBXNativeTarget "nixGoBoardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506301FA15A0219600515303 /* Debug */,
+				506301FB15A0219600515303 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 506301BA15A0219600515303 /* Project object */;
+}
