@@ -2,9 +2,9 @@
 //  GoBoard.m
 //  nixGoBoard
 //
-//  Created by 宏旭 朱 on 12-7-1.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
-//
+//  Created by nixzhu on 12-7-1.
+//  Copyright (c) 2012年 CandyStar. All rights reserved.
+//  Email: zhuhongxu@gmail.com
 
 #import "GoBoard.h"
 
@@ -15,15 +15,8 @@
 @synthesize gridlen;
 @synthesize offset;
 @synthesize movecount;
-//#define gridlen 38
-//#define offset 32
 
-/*
-- (int**)trueBoard
-{
-    return (int**)trueBoard;
-}
-- (void)setTrueBoard:(int **)trueBoard
+- (void)initBoard
 {
     int i, j;
     for (i = 0; i < LINE_NUM; i++) {
@@ -32,38 +25,17 @@
         }
     }
 }
-*/
-- (void)initBoard//:(int **)xtrueBoard
-{
-    int i, j;
-    for (i = 0; i < LINE_NUM; i++) {
-        for (j = 0; j < LINE_NUM; j++) {
-            trueBoard[i][j] = 0;
-        }
-    }
-    //trueBoard[4][4] = 2;
-    //trueBoard[3][3] = 1;
-    //trueBoard[5][4] = 2;
-}
-
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
-        //[self setTrueBoard:self.trueBoard];
         [self setGridlen:38];
         [self setOffset:32];
-        [self setTouchX:-100];
+        [self setTouchX:-100]; //TODO
         [self setTouchY:-100];
         [self initBoard];
         [self setMovecount:0];
         jie = [NSMutableArray arrayWithCapacity:0];
-        /*
-        if (trueBoard[1][1] == 1) {
-            printf("FIch");
-        } else {
-            printf("xxxxxx");
-        }*/
     }
     return self;
 }
@@ -85,6 +57,7 @@
     CGColorRef color = CGColorCreate(colorspace, components);
     CGContextSetStrokeColorWithColor(context, color);
     int i;
+    
     for (i = 0; i < LINE_NUM; i++) {
         CGContextMoveToPoint(context, 0+offset, i*gridlen+offset);
         CGContextAddLineToPoint(context, (LINE_NUM-1)*gridlen+offset, i*gridlen+offset);
@@ -100,46 +73,45 @@
     
     CGColorSpaceRelease(colorspace);
     CGColorRelease(color);
-
 }
-- (void)ninePoints:(CGContextRef)context
+- (void)ninePoints:(CGContextRef)context // TODO, LINE_NUM xxx
 {
-    /* Draw a circle */
+    /* Draw some circles */
     CGFloat r = 4;
-    CGContextSetFillColor(context, CGColorGetComponents( [[UIColor colorWithRed:0 green:0 blue:0 alpha:1 ] CGColor]));    
-    CGContextAddArc(context, 3*gridlen+offset, 3*gridlen+offset, r, 0, 6.28, 0);
+    CGContextSetFillColor(context, CGColorGetComponents([[UIColor colorWithRed:0 green:0 blue:0 alpha:1] CGColor]));    
+    CGContextAddArc(context, 3*gridlen+offset, 3*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
     
-    CGContextAddArc(context, 9*gridlen+offset, 3*gridlen+offset, r, 0, 6.28, 0);
+    CGContextAddArc(context, 9*gridlen+offset, 3*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
     
-    CGContextAddArc(context, 15*gridlen+offset, 3*gridlen+offset, r, 0, 6.28, 0);
+    CGContextAddArc(context, 15*gridlen+offset, 3*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
     
-    CGContextAddArc(context, 3*gridlen+offset, 9*gridlen+offset, r, 0, 6.28, 0);
+    CGContextAddArc(context, 3*gridlen+offset, 9*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
     
-    CGContextAddArc(context, 9*gridlen+offset, 9*gridlen+offset, r, 0, 6.28, 0);
+    CGContextAddArc(context, 9*gridlen+offset, 9*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
     
-    CGContextAddArc(context, 15*gridlen+offset, 9*gridlen+offset, r, 0, 6.28, 0);
+    CGContextAddArc(context, 15*gridlen+offset, 9*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
     
-    CGContextAddArc(context, 3*gridlen+offset, 15*gridlen+offset, r, 0, 6.28, 0);
+    CGContextAddArc(context, 3*gridlen+offset, 15*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
     
-    CGContextAddArc(context, 9*gridlen+offset, 15*gridlen+offset, r, 0, 6.28, 0);
+    CGContextAddArc(context, 9*gridlen+offset, 15*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
     
-    CGContextAddArc(context, 15*gridlen+offset, 15*gridlen+offset, r, 0, 6.28, 0);
+    CGContextAddArc(context, 15*gridlen+offset, 15*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
 }
@@ -153,12 +125,12 @@
         for (j = 0; j < LINE_NUM; j++) {
             if (trueBoard[i][j] == 1) {
                 CGContextSetFillColor(context, CGColorGetComponents( [[UIColor colorWithRed:0 green:0 blue:0 alpha:1 ] CGColor]));    
-                CGContextAddArc(context, i*gridlen+offset, j*gridlen+offset, r, 0, 6.28, 0);
+                CGContextAddArc(context, i*gridlen+offset, j*gridlen+offset, r, 0, M_PI*2, 0);
                 CGContextClosePath(context); 
                 CGContextFillPath(context);
             } else if (trueBoard[i][j] == 2) {
                 CGContextSetFillColor(context, CGColorGetComponents( [[UIColor colorWithRed:255 green:255 blue:255 alpha:1 ] CGColor]));    
-                CGContextAddArc(context, i*gridlen+offset, j*gridlen+offset, r, 0, 6.28, 0);
+                CGContextAddArc(context, i*gridlen+offset, j*gridlen+offset, r, 0, M_PI*2, 0);
                 CGContextClosePath(context); 
                 CGContextFillPath(context);
             }
@@ -361,8 +333,6 @@
     NSNumber *n1 = [[NSNumber alloc] initWithInt:x];
     NSNumber *n2 = [[NSNumber alloc] initWithInt:y];
     NSArray *p1 = [NSArray arrayWithObjects:n1, n2, nil];
-    //printf("%d\n", [n1 intValue]);
-    //printf("%d %d\n", [[p1 objectAtIndex:0] intValue], [[p1 objectAtIndex:1] intValue]);
     [deadBody addObject:p1];
 }
 - (void)pushIn:(NSMutableArray*)jie_ X:(int)x Y:(int)y MoveCount:(int)moveCount
@@ -371,8 +341,6 @@
     NSNumber *n2 = [[NSNumber alloc] initWithInt:y];
     NSNumber *n3 = [[NSNumber alloc] initWithInt:moveCount];
     NSArray *p1 = [NSArray arrayWithObjects:n1, n2, n3, nil];
-    //printf("%d\n", [n1 intValue]);
-    //printf("%d %d\n", [[p1 objectAtIndex:0] intValue], [[p1 objectAtIndex:1] intValue]);
     [jie_ addObject:p1];
 }
 - (BOOL)recordDeadBody:(NSMutableArray *)deadBody
@@ -444,37 +412,28 @@
         x = [[obj objectAtIndex:0] intValue];
         y = [[obj objectAtIndex:1] intValue];
         trueBoard[x][y] = 0;
-        //printf("obj (%d %d)\n", [[obj objectAtIndex:0] intValue], [[obj objectAtIndex:1] intValue]);
     }
 }
 - (BOOL)isJieX:(int)x Y:(int)y DeadBody:(NSMutableArray *)deadBody
 {
     if ([deadBody count] == 1) {
         for (NSArray* obj in jie) {
-            printf("jjjj %d %d %d, %d %d %d\n",[[obj objectAtIndex:0] intValue],
-                   [[obj objectAtIndex:1] intValue],
-                   [[obj objectAtIndex:2] intValue],
-                   [[[deadBody objectAtIndex:0] objectAtIndex:0] intValue],
-                   [[[deadBody objectAtIndex:0] objectAtIndex:1] intValue],
-                   movecount
-                   );
             if ([[obj objectAtIndex:0] intValue] == [[[deadBody objectAtIndex:0] objectAtIndex:0] intValue] &&
                 [[obj objectAtIndex:1] intValue] == [[[deadBody objectAtIndex:0] objectAtIndex:1] intValue] &&
                 [[obj objectAtIndex:2] intValue] == movecount) {
-                printf("isJie\n");
+                // TODO 通知用户，弹个窗口什么的，或者写个Label
                 return true;
             } else {
-                printf("isNOTJie\n");
+
             }
         }
         [self pushIn:jie X:x Y:y MoveCount:(movecount+1)];
-        printf("is-----NOTJie\n");
         return false;
     }
-    printf("is--++++--NOTJie\n");
+
     return false;
 }
-- (void)playinX:(int)x Y:(int)y //MC:(int)movecount
+- (void)playinX:(int)x Y:(int)y // 落子的算法
 {
     if (x < 0 || x > LINE_NUM || y < 0 || y > LINE_NUM) {
         return; //TODO
@@ -504,7 +463,7 @@
                 if (cret)
                     canDown = true;
                 else
-                    printf("无气，不能落子！A");
+                    printf("无气，不能落子！"); //TODO 通知机制要改哦
             }
         } else {
             NSMutableArray *deadBody = [NSMutableArray arrayWithCapacity:0];
@@ -514,13 +473,12 @@
                     [self cleanDeadBody:deadBody];
                     canDown = true;
                 } else {
-                    
+                    // TODO 通知
                 }
             }
         }
         
     } else {
-        printf("youqi\n");
         canDown = true;
         NSMutableArray *deadBody = [NSMutableArray arrayWithCapacity:0];
         [self canEatX:x Y:y Color:color DeadBody:deadBody];
@@ -535,38 +493,7 @@
         }
         movecount++;
     }
-   
-    
-    
-    
-    NSMutableArray *deadBody;
-    deadBody = [NSMutableArray arrayWithCapacity:0];
-    [self pushIn:deadBody X:3 Y:5];
-    [self pushIn:deadBody X:6 Y:7];
-    /*
-    NSNumber *n1 = [[NSNumber alloc] initWithInt:5];
-    NSNumber *n2 = [[NSNumber alloc] initWithInt:4];
-    NSArray *p1 = [NSArray arrayWithObjects:n1, n2, nil];
-    printf("%d\n", [n1 intValue]);
-    printf("%d %d\n", [[p1 objectAtIndex:0] intValue], [[p1 objectAtIndex:1] intValue]);
-    [deadBody addObject:p1];
-    [deadBody addObject:p1];
-    */
-    for (NSArray* obj in deadBody) {
-        printf("obj (%d %d)\n", [[obj objectAtIndex:0] intValue], [[obj objectAtIndex:1] intValue]);
-    }
-    /*
-    printf("mc (%d %d) %d\n",x,y, movecount);    
-    int i,j;
-    for (i = 0; i < LINE_NUM-15; i++) {
-        for (j = 0; j < LINE_NUM-15; j++) {
-            printf("%d ", trueBoard[i][j]);
-        }
-        printf("\n");
-    }*/
 }
-
-
 
 
 // Only override drawRect: if you perform custom drawing.
@@ -578,44 +505,16 @@
     [self grid:context];
     [self ninePoints:context];
     [self showPoints:context];
-    
-    CGContextSetLineWidth(context, 2.0);
-    
-    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-    
-    CGFloat components[] = {0.0, 0.0, 1.0, 1.0};
-    
-    CGColorRef color = CGColorCreate(colorspace, components);
-    
-    CGContextSetStrokeColorWithColor(context, color);
-    
-   // CGContextMoveToPoint(context, 0, 0);
-   // CGContextAddLineToPoint(context, 300, 400);
-    
-    //CGContextMoveToPoint(context, 0, 0);
-    ////CGContextAddLineToPoint(context, touch.x, touch.y);
-    //CGContextAddLineToPoint(context, touchX, touchY);
-    //CGContextStrokePath(context);
-    
-    //CGContextAddArc(context, touchX, touchY, 19, 0, 6.28, 0);
-    //CGContextClosePath(context); 
-    //CGContextFillPath(context); 
-
-    
-    CGColorSpaceRelease(colorspace);
-    CGColorRelease(color);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *t = [touches anyObject];
-    touch = [t locationInView:self];
+    //UITouch *t = [touches anyObject];
+    //touch = [t locationInView:self];
     //[self setNeedsDisplay];
 }
 
-
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event //只在触摸结束时处理，开始和中间暂时不用
 {
     UITouch *t = [touches anyObject];
     touch = [t locationInView:self];
@@ -639,18 +538,16 @@
     }
     if (xok && yok) {
         [self playinX:theX Y:theY];
-        //trueBoard[theX][theY] = 1;
     }
     
     [self setNeedsDisplay];
 }
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *t = [touches anyObject];
-    touch = [t locationInView:self];
-
-    
-    [self setNeedsDisplay];
+    //UITouch *t = [touches anyObject];
+    //touch = [t locationInView:self];
+    //[self setNeedsDisplay];
 }
 
 @end

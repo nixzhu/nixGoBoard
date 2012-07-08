@@ -2,9 +2,9 @@
 //  GoBoard.h
 //  nixGoBoard
 //
-//  Created by 宏旭 朱 on 12-7-1.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
-//
+//  Created by nixzhu on 12-7-1.
+//  Copyright (c) 2012年 CandyStar. All rights reserved.
+//  Email: zhuhongxu@gmail.com
 
 #import <UIKit/UIKit.h>
 
@@ -20,14 +20,14 @@
     CGFloat offset;
     
     int movecount;
-    NSMutableArray *jie;// = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *jie;
 }
-//@property int** trueBoard;
+
 @property CGPoint touch;
 @property CGFloat touchX;
 @property CGFloat touchY;
 @property CGFloat gridlen;
 @property CGFloat offset;
 @property int movecount;
-//@property NSMutableArray *jie;;
+
 @end
