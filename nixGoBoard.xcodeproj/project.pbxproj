@@ -20,6 +20,7 @@
 		506301E815A0219600515303 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506301C915A0219600515303 /* Foundation.framework */; };
 		506301F015A0219600515303 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 506301EE15A0219600515303 /* InfoPlist.strings */; };
 		506301F315A0219600515303 /* nixGoBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 506301F215A0219600515303 /* nixGoBoardTests.m */; };
+		5063020515A0222000515303 /* GoBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5063020415A0222000515303 /* GoBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +38,23 @@
 		506301C715A0219600515303 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		506301C915A0219600515303 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		506301CB15A0219600515303 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		506301CF15A0219600515303 /* nixGoBoard-Info.plist */ = {isa = PBXFileReference; path = "nixGoBoard-Info.plist"; sourceTree = "<group>"; };
+		506301CF15A0219600515303 /* nixGoBoard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nixGoBoard-Info.plist"; sourceTree = "<group>"; };
 		506301D115A0219600515303 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		506301D315A0219600515303 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		506301D515A0219600515303 /* nixGoBoard-Prefix.pch */ = {isa = PBXFileReference; path = "nixGoBoard-Prefix.pch"; sourceTree = "<group>"; };
-		506301D615A0219600515303 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		506301D515A0219600515303 /* nixGoBoard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nixGoBoard-Prefix.pch"; sourceTree = "<group>"; };
+		506301D615A0219600515303 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		506301D715A0219600515303 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		506301D915A0219600515303 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		506301D915A0219600515303 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		506301DA15A0219600515303 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		506301DD15A0219600515303 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		506301E415A0219600515303 /* nixGoBoardTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nixGoBoardTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		506301E515A0219600515303 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		506301ED15A0219600515303 /* nixGoBoardTests-Info.plist */ = {isa = PBXFileReference; path = "nixGoBoardTests-Info.plist"; sourceTree = "<group>"; };
+		506301ED15A0219600515303 /* nixGoBoardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nixGoBoardTests-Info.plist"; sourceTree = "<group>"; };
 		506301EF15A0219600515303 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		506301F115A0219600515303 /* nixGoBoardTests.h */ = {isa = PBXFileReference; path = nixGoBoardTests.h; sourceTree = "<group>"; };
+		506301F115A0219600515303 /* nixGoBoardTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nixGoBoardTests.h; sourceTree = "<group>"; };
 		506301F215A0219600515303 /* nixGoBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nixGoBoardTests.m; sourceTree = "<group>"; };
+		5063020315A0222000515303 /* GoBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoBoard.h; sourceTree = "<group>"; };
+		5063020415A0222000515303 /* GoBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				506301D715A0219600515303 /* AppDelegate.m */,
 				506301D915A0219600515303 /* ViewController.h */,
 				506301DA15A0219600515303 /* ViewController.m */,
+				5063020315A0222000515303 /* GoBoard.h */,
+				5063020415A0222000515303 /* GoBoard.m */,
 				506301DC15A0219600515303 /* ViewController.xib */,
 				506301CE15A0219600515303 /* Supporting Files */,
 			);
@@ -260,6 +265,7 @@
 				506301D415A0219600515303 /* main.m in Sources */,
 				506301D815A0219600515303 /* AppDelegate.m in Sources */,
 				506301DB15A0219600515303 /* ViewController.m in Sources */,
+				5063020515A0222000515303 /* GoBoard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +437,7 @@
 				506301F815A0219600515303 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		506301F915A0219600515303 /* Build configuration list for PBXNativeTarget "nixGoBoardTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +446,7 @@
 				506301FB15A0219600515303 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
