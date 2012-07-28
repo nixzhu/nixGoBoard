@@ -17,6 +17,8 @@
     CGFloat touchY;
     int tX;
     int tY;
+    int latestX;
+    int latestY;
     BOOL touching;
     CGFloat gridlen;
     CGFloat offset;

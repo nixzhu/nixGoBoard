@@ -170,7 +170,13 @@
             }
         }
     }
-    
+    //latest stone, make it "red" to easy notice
+    if (movecount > 0) {
+        CGContextSetFillColor(context, CGColorGetComponents( [[UIColor colorWithRed:255 green:0 blue:0 alpha:1 ] CGColor]));
+        CGContextAddArc(context, latestX*gridlen+offset, latestY*gridlen+offset, r/3, 0, M_PI*2, 0);
+        CGContextClosePath(context);
+        CGContextFillPath(context);
+    }
 }
 
 //********************************************************************
@@ -538,10 +544,10 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self grid:context];
     [self ninePoints:context];
+    [self showPoints:context];
     if (touching) {
         [self currentPoint:context];
     }
-    [self showPoints:context];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -566,11 +572,13 @@
             touchX = i*gridlen+offset;
             xok = 1;
             theX = i;
+            latestX = i;
         }
         if (y > i*gridlen+offset-gridlen/2 && y < i*gridlen+offset+gridlen/2) {
             touchY = i*gridlen+offset;
             yok = 1;
             theY = i;
+            latestY = i;
         }
     }
     if (xok && yok) {
