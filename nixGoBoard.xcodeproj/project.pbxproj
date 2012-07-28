@@ -201,7 +201,7 @@
 		506301BA15A0219600515303 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 506301BD15A0219600515303 /* Build configuration list for PBXProject "nixGoBoard" */;
 			compatibilityVersion = "Xcode 3.2";

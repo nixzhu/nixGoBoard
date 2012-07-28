@@ -15,7 +15,9 @@
     CGPoint touch;
     CGFloat touchX;
     CGFloat touchY;
-    
+    int tX;
+    int tY;
+    BOOL touching;
     CGFloat gridlen;
     CGFloat offset;
     

@@ -9,6 +9,7 @@
 #import "GoBoard.h"
 
 @implementation GoBoard
+
 @synthesize touch;
 @synthesize touchX;
 @synthesize touchY;
@@ -114,6 +115,39 @@
     CGContextAddArc(context, 15*gridlen+offset, 15*gridlen+offset, r, 0, M_PI*2, 0);
     CGContextClosePath(context); 
     CGContextFillPath(context); 
+}
+
+- (void)currentPoint:(CGContextRef)context
+{
+    //来个十字线？
+    CGContextSetLineWidth(context, 2.0);
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+    CGFloat components[] = {0.0, 0.0, 1.0, 1.0};
+    CGColorRef color = CGColorCreate(colorspace, components);
+    CGContextSetStrokeColorWithColor(context, color);
+    
+    CGContextMoveToPoint(context, 0+offset*0, tY*gridlen+offset);
+    CGContextAddLineToPoint(context, (LINE_NUM-1)*gridlen+offset*2, tY*gridlen+offset);
+    
+    CGContextMoveToPoint(context, tX*gridlen+offset, 0+offset*0);
+    CGContextAddLineToPoint(context, tX*gridlen+offset, (LINE_NUM-1)*gridlen+offset*2);
+    
+    CGContextStrokePath(context);
+    
+    /* Draw some circles */
+    CGFloat r = gridlen/2+5;
+    if (movecount % 2 == 0) {
+        CGContextSetFillColor(context, CGColorGetComponents([[UIColor colorWithRed:0 green:0 blue:0 alpha:0.55] CGColor]));
+    } else {
+        CGContextSetFillColor(context, CGColorGetComponents([[UIColor colorWithRed:255 green:255 blue:255 alpha:0.75] CGColor]));
+    }
+    //CGContextSetFillColor(context, CGColorGetComponents([[UIColor colorWithRed:0 green:0 blue:0 alpha:1] CGColor]));
+    CGContextAddArc(context, tX*gridlen+offset, tY*gridlen+offset, r, 0, M_PI*2, 0);
+    CGContextClosePath(context);
+    CGContextFillPath(context);
+    
+
+
 }
 
 - (void)showPoints:(CGContextRef)context
@@ -504,6 +538,9 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self grid:context];
     [self ninePoints:context];
+    if (touching) {
+        [self currentPoint:context];
+    }
     [self showPoints:context];
 }
 
@@ -539,7 +576,7 @@
     if (xok && yok) {
         [self playinX:theX Y:theY];
     }
-    
+    touching = false;
     [self setNeedsDisplay];
 }
 
@@ -548,6 +585,31 @@
     //UITouch *t = [touches anyObject];
     //touch = [t locationInView:self];
     //[self setNeedsDisplay];
+    UITouch *t = [touches anyObject];
+    touch = [t locationInView:self];
+    
+    CGFloat x = touch.x;
+    CGFloat y = touch.y;
+    int i;
+    //int xok, yok;
+    //int theX, theY;
+    for (i = 0; i < LINE_NUM; i++) {
+        if (x > i*gridlen+offset-gridlen/2 && x < i*gridlen+offset+gridlen/2) {
+            touchX = i*gridlen+offset;
+            //xok = 1;
+            tX = i;
+        }
+        if (y > i*gridlen+offset-gridlen/2 && y < i*gridlen+offset+gridlen/2) {
+            touchY = i*gridlen+offset;
+            //yok = 1;
+            tY = i;
+        }
+    }
+   // if (xok && yok) {
+   //     [self playinX:theX Y:theY];
+   // }
+    touching = true;
+    [self setNeedsDisplay];
 }
 
 @end
